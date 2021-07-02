@@ -4,6 +4,9 @@ const CopyPlugin = require("copy-webpack-plugin");
 const resDir = path.resolve(__dirname, "smoke", "res");
 
 module.exports = {
+  entry: {
+    main: './src/index.tsx',
+  },
   plugins: [
     new CopyPlugin({
       patterns: [
@@ -15,7 +18,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader"
